@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="timboButton" parent="android:Widget.Material.Button.Colored">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/secondary</item>
+
+    </style>
+</resources>

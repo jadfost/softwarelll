@@ -1,0 +1,50 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="TimboTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/secondary</item>
+
+        <item name="buttonStyle">@style/timboButton</item>
+    </style>
+
+    <style name="appTitle">
+        <item name="android:text">@string/app_name</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/h1</item>
+
+    </style>
+
+    <style name="thumbnail" parent="TimboTheme">
+        <item name="android:layout_width">110dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">3dp</item>
+        <item name="android:layout_marginRight">3dp</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:padding">1dp</item>
+    </style>
+
+    <!--style name="timboButton" parent="Base.Widget.AppCompat.Button"-->
+    <!--style name="timboButton" parent="Base.Widget.AppCompat.Button.Colored"-->
+    <style name="timboButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:colorButtonNormal" tools:targetApi="lollipop">@color/secondaryDisabled</item>
+    </style>
+
+    <style name="timboTextStyle">
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="progressBar" parent="Widget.AppCompat.ProgressBar" />
+
+    <style name="money">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/green</item>
+        <item name="android:fontFamily">Courier New</item>
+    </style>
+
+    <style name="timboText" parent="Widget.AppCompat.AutoCompleteTextView">
+
+    </style>
+</resources>

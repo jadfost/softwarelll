@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="EdgeMargin">10dp</dimen>
+    <dimen name="priceRightMargin">@dimen/EdgeMargin</dimen>
+    <dimen name="btnMargin">5dp</dimen>
+    <!-- <dimen name="fragmentItemOneLineMargin">20dp</dimen> -->
+    <dimen name="fragmentItemMargin">4dp</dimen>
+    <dimen name="fragmentItemNumberSpacing">10dp</dimen>
+    <dimen name="fragmentItemWordSpacing">75dp</dimen>
+    <dimen name="HeaderMargin">10dp</dimen>
+    <dimen name="alertTextSize">20dp</dimen>
+    <dimen name="detailsTextSize">10sp</dimen>
+    <dimen name="textFieldSize">150dp</dimen>
+    <dimen name="btnPaddingTopFromText">20dp</dimen>
+    <dimen name="labelPadding">4dp</dimen>
+    <dimen name="halfLabelPadding">2dp</dimen>
+    <dimen name="footerHeight">50dp</dimen>
+    <dimen name="lineSeparatorHeight">2dp</dimen>
+
+    <dimen name="h1">40dp</dimen>
+    <dimen name="largeImageMargin">30dp</dimen>
+    <dimen name="TitleMargin">20dp</dimen>
+    <dimen name="itemPriceOnRightWidth">60dp</dimen>
+</resources>
