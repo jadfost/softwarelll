@@ -1,9 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context="com.example.softwarelll.LoginActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/basketImage"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_above="@id/centerLoginScreen"
+        android:layout_marginBottom="60dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/shopping_basket_green" />
+
+    <TextView
+        android:id="@+id/appTitle"
+        style="@style/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/basketImage"
+        android:layout_centerHorizontal="true" />
+
+    <View
+        android:id="@+id/centerLoginScreen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appTitle"
+        android:gravity="center"
+        android:id="@+id/loginTable">
+
+        <TableRow
+            android:layout_height="63dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:textColor="#000000"
+                android:textSize="23sp" />
+
+            <EditText
+                android:id="@+id/usernameLoginScreen"
+                android:layout_width="196dp"
+                android:layout_height="wrap_content"
+                android:hint="Digitar"
+                android:singleLine="true"
+                android:textSize="22sp" />
+        </TableRow>
+
+    <TableRow android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password"
+            android:textColor="#000000"
+            android:textSize="23sp" />
+
+        <EditText
+            android:id="@+id/passwordLoginScreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Digitar"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textSize="22sp" />
+    </TableRow>
+    <TableRow android:gravity="center_horizontal"
+        android:paddingTop="@dimen/btnPaddingTopFromText">
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="149dp"
+            android:layout_height="66dp"
+            android:text="@string/loginBtn"
+            style="@style/Softwarelll" />
+
+        <Button
+            android:id="@+id/signupBtn"
+            android:layout_width="168dp"
+            android:layout_height="64dp"
+            android:text="@string/signUpBtn"
+            style="@style/Softwarelll" />
+
+    </TableRow>
+    </TableLayout>
+</RelativeLayout>
