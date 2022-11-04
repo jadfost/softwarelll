@@ -1,42 +1,42 @@
 <resources>
-    <string name="app_name">Shopping Basket</string>
+    <string name="app_name">Softwarelll</string>
 
-    // Login Activity
+    // Actividad de Logeo
     <string name="login">Login:</string>
-    <string name="password">Password:</string>
-    <string name="firstname">First Name:</string>
-    <string name="lastname">Last Name:</string>
-    <string name="address">Address:</string>
-    <string name="city">City:</string>
-    <string name="postalCode">Postal Code:</string>
+    <string name="password">Contraseña:</string>
+    <string name="firstname">Nombre:</string>
+    <string name="lastname">Apellido:</string>
+    <string name="address">Direccion:</string>
+    <string name="city">Ciudad:</string>
+    <string name="postalCode">Codigo Postal:</string>
 
-    <string name="clerkLoginBtn">Sign up as Clerk</string>
-    <string name="customerLoginBtn">Sign up as Customer</string>
-    <string name="cancelBtn">Cancel</string>
+    <string name="clerkLoginBtn">Regístrese como secretario</string>
+    <string name="customerLoginBtn">Regístrate como Cliente</string>
+    <string name="cancelBtn">Cancelar</string>
     <string name="productId">Product ID:</string>
-    <string name="employeeId">Employee ID:</string>
-    <string name="placeOrderBtn">Place Order</string>
-    <string name="signUpBtn">Sign Up</string>
+    <string name="employeeId">Empleado ID:</string>
+    <string name="placeOrderBtn">Realizar pedido</string>
+    <string name="signUpBtn">Registrar</string>
     <string name="loginBtn">Login</string>
-    <string name="listProductsHeader">Current Cart:</string>
+    <string name="listProductsHeader">Carrito actual:</string>
     <string name="total">Total:</string>
-    <string name="addToCart">Add to cart</string>
-    <string name="price">Price:</string>
-    <string name="quantity">Quantity:</string>
-    <string name="currentQuantity">Current quantity:</string>
-    <string name="newQuantity">New quantity:</string>
-    <string name="listOrders">List Orders</string>
-    <string name="listOrdersHeader">Orders:</string>
-    <string name="noOrders">No orders found!</string>
-    <string name="viewProducts">View Products</string>
-    <string name="deliverBtn">Confirm delivery</string>
-    <string name="cancelOrderBtn">Cancel Order</string>
-    <string name="canceled">Canceled</string>
-    <string name="onItsWay">Delivery confirmed!</string>
-    <string name="itemDeliveredUserInfo">Item delivered</string>
-    <!-- also check Status class -->
+    <string name="addToCart">Añadir a la cesta</string>
+    <string name="price">Precio:</string>
+    <string name="quantity">Cantidad:</string>
+    <string name="currentQuantity">Cantidad actual:</string>
+    <string name="newQuantity">Nueva cantidad:</string>
+    <string name="listOrders">Lista de pedidos</string>
+    <string name="listOrdersHeader">Pedidos:</string>
+    <string name="noOrders">¡No se encontraron pedidos!</string>
+    <string name="viewProducts">Ver productos</string>
+    <string name="deliverBtn">Confirmar entrega</string>
+    <string name="cancelOrderBtn">Cancelar orden</string>
+    <string name="canceled">Cancelado</string>
+    <string name="onItsWay">¡Entrega confirmada!</string>
+    <string name="itemDeliveredUserInfo">Artículo entregado</string>
+    <!-- verifique también Clase de estado -->
 
-    <!-- Input Digits and Hints -->
+    <!-- Introducir dígitos y sugerencias -->
     <string name="alphanumericDotUnderscoreDashHint">Only letters, digits, ., _ and - allowed</string>
     <string name="alphanumericDotUnderscoreDashDigits">0,1,2,3,4,5,6,7,8,9,QWERTYUIOPASDFGHJKLZXCVBNM,qwertzuiopasdfghjklyxcvbnm,.,_,-</string>
     <string name="alphanumericDotUnderscoreDashSpaceDigits">0,1,2,3,4,5,6,7,8,9,QWERTYUIOPASDFGHJKLZXCVBNM,qwertzuiopasdfghjklyxcvbnm, ,.,_,-</string>
@@ -46,5 +46,6 @@
     <string name="alphaHint">Only letters allowed</string>
     <string name="amountPurchased">Amount purchased:</string>
     <string name="thumbnail">Thumbnail</string>
+    <string name="digitar">Digita</string>
 
 </resources>

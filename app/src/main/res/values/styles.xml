@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="TimboTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="Softwarelll" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primaryDark</item>
-        <item name="colorAccent">@color/secondary</item>
+        <item name="colorAccent">#2B2B2B</item>
 
         <item name="buttonStyle">@style/timboButton</item>
     </style>
@@ -16,7 +16,7 @@
 
     </style>
 
-    <style name="thumbnail" parent="TimboTheme">
+    <style name="thumbnail" parent="Softwarelll">
         <item name="android:layout_width">110dp</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_marginLeft">3dp</item>
