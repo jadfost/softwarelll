@@ -25,8 +25,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
                     "CREATE TABLE " + DatabaseManager.tables[PRODUCT] + " (productoId INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, precio TEXT," +
                             " cantidad INTEGER, categoria TEXT, imageUrl TEXT);",
                     "CREATE TABLE " + DatabaseManager.tables[ORDER] + " (orderId INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                            "clienteId INTEGER KEY REFERENCES tbl_customer(customerId), " +
-                            "productoId INTEGER KEY REFERENCES tbl_product(productId), " +
+                            "clienteId INTEGER KEY REFERENCES tbl_customer(clienteId), " +
+                            "productoId INTEGER KEY REFERENCES tbl_product(productoId), " +
                             "fechaorden DATE, estado TEXT," +
                             "precio FLOAT, cantidad INTEGER );"
                     ,};
@@ -159,15 +159,15 @@ public class DatabaseManager extends SQLiteOpenHelper {
     }
 
     // Actualizar un registro
-    public int updateRecord(ContentValues values, String tableName, String fields[],String record[]) {
+    public void updateRecord(ContentValues values, String tableName, String[] fields, String[] record) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         for (int i=1;i<record.length;i++)
             values.put(fields[i], record[i]);
 
         // actualizando fila con id dado = record[0]
-        return db.update(tableName, values, fields[0] + " = ?",
-                new String[] { record[0] });
+        db.update(tableName, values, fields[0] + " = ?",
+                new String[]{record[0]});
     }
 
     // Eliminar un registro con una identificación dada
