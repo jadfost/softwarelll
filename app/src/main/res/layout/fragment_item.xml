@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ProgressBar
+        android:id="@+id/productProgressBar"
+        android:layout_width="110dp"
+        android:layout_height="110dp" />
+    <ImageView
+        android:id="@+id/productThumbnail"
+        style="@style/thumbnail"
+        android:layout_height="110dp"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/thumbnail" />
+
+    <TextView
+        android:id="@+id/productQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="@dimen/labelPadding"
+        android:paddingLeft="@dimen/labelPadding"
+        android:paddingTop="@dimen/halfLabelPadding"
+        android:paddingBottom="@dimen/halfLabelPadding"
+        android:layout_alignRight="@id/productThumbnail"
+        android:layout_alignBottom="@id/productThumbnail"
+        android:textColor="@color/white"
+        android:background="@color/secondary"
+        />
+
+    <TextView
+        android:id="@+id/productName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/fragmentItemNumberSpacing"
+        android:layout_marginStart="@dimen/fragmentItemNumberSpacing"
+        android:layout_marginTop="@dimen/fragmentItemMargin"
+        android:layout_marginBottom="@dimen/fragmentItemMargin"
+        android:paddingRight="@dimen/itemPriceOnRightWidth"
+        android:paddingEnd="@dimen/itemPriceOnRightWidth"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/productThumbnail"
+        android:layout_toEndOf="@id/productThumbnail"
+        />
+
+    <TextView
+        android:id="@+id/productPrice"
+        style="@style/money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/priceRightMargin"
+        android:layout_marginEnd="@dimen/priceRightMargin"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/fragmentItemMargin"
+        android:layout_marginBottom="@dimen/fragmentItemMargin"
+        android:layout_centerVertical="true"
+        />
+</RelativeLayout>
