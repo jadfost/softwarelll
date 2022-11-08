@@ -36,6 +36,11 @@ public class Usuarios {
         this.contrasena = record[2];
     }
 
+    public static void setDb(Context context) {
+        db = new DatabaseManager(context);
+        initUsuarios();
+    }
+
     public String fullName() {
         return this.nombre;
     }
@@ -50,29 +55,45 @@ public class Usuarios {
         );
     }
 
-    public static Usuarios queryCustomerByUsername(String nombre) {
-        return queryUserByUsername(DatabaseManager.tables[DatabaseManager.CLIENTE], nombre);
+    public static void initUsuarios() {
+        db.recreateOneTable(DatabaseManager.CLIENTE);
+        new Usuarios( "1", "cliente1","1234")
+                .addToDatabase();
+        new Usuarios( "2", "cliente2","1234")
+                .addToDatabase();
+        new Usuarios( "3", "cliente3","1234")
+                .addToDatabase();
+        new Usuarios( "4", "cliente4","1234")
+                .addToDatabase();
+        new Usuarios( "5", "cliente5","1234")
+                .addToDatabase();
+    }
+
+    private String[] getRecord() {
+        return new String[] {
+                this.id,
+                this.nombre,
+                this.contrasena
+        };
+    }
+
+    public void addToDatabase() {
+        db.addRecord(new ContentValues(), DatabaseManager.tables[DatabaseManager.CLIENTE], tbl_customer_fields, this.getRecord() );
+    }
+
+    private void updateDatabase() {
+        db.updateRecord(new ContentValues(), DatabaseManager.tables[DatabaseManager.CLIENTE], tbl_customer_fields,  this.getRecord() );
+    }
+
+    public static Usuarios queryCustomerByUsername(String username) {
+        return queryUserByUsername(DatabaseManager.tables[DatabaseManager.CLIENTE], username);
     }
 
     @SuppressLint("LongLogTag")
     public static Usuarios queryCustomerById(String id) {
-        List userList = db.queryTable(DatabaseManager.tables[DatabaseManager.CLIENTE], "customerId = ?", new String[] { id });
+        List userList = db.queryTable(DatabaseManager.tables[DatabaseManager.CLIENTE], "clienteId = ?", new String[] { id });
         Log.d("nirtson.timbo.clienteId", userList.toString());
         return new Usuarios( (List) userList.get(0));
     }
 
-    public static void setDb(Context context) {
-        db = new DatabaseManager(context);
-    }
-
-    private String[] getRecord() {
-        return new String[] { this.id, this.nombre, this.contrasena};
-    }
-
-    public long addToDatabaseCustomer() {
-        Long id = db.addRecord(new ContentValues(), DatabaseManager.tables[DatabaseManager.CLIENTE], tbl_customer_fields, this.getRecord());
-        Log.d("nirtson.timbo", "Empleado creado! " + id.toString());
-        return id;
-
-    }
 }

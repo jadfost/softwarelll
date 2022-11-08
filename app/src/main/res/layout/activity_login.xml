@@ -81,14 +81,7 @@
             android:id="@+id/loginBtn"
             android:layout_width="149dp"
             android:layout_height="66dp"
-            android:text="@string/loginBtn"
-            style="@style/Softwarelll" />
-
-        <Button
-            android:id="@+id/signupBtn"
-            android:layout_width="168dp"
-            android:layout_height="64dp"
-            android:text="@string/signUpBtn"
+            android:text="@string/entrar"
             style="@style/Softwarelll" />
 
     </TableRow>
