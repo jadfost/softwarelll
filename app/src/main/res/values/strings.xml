@@ -3,6 +3,7 @@
 
     // Actividad de Logeo
     <string name="login">Login:</string>
+    <string name="entrar">Inciar Sesion</string>
     <string name="password">Contraseña:</string>
     <string name="firstname">Nombre:</string>
     <string name="lastname">Apellido:</string>

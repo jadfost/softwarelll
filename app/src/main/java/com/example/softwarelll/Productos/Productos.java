@@ -3,6 +3,8 @@ package com.example.softwarelll.Productos;
 import android.content.ContentValues;
 import android.content.Context;
 
+import androidx.annotation.NonNull;
+
 import com.example.softwarelll.DB.DatabaseManager;
 
 import java.io.Serializable;
@@ -19,7 +21,7 @@ public class Productos implements Serializable {
 
     private static DatabaseManager db;
     public static final String[] tbl_product_fields = {
-            "productId", "nombre", "precio", "cantidad", "categoria", "imageUrl"
+            "productoId", "nombre", "precio", "cantidad", "categoria", "imageUrl"
     };
     public static final int size = tbl_product_fields.length;
 
@@ -46,9 +48,11 @@ public class Productos implements Serializable {
         initProducts();
     }
 
+    @NonNull
     @Override
     public String toString() {
-        return  "Product.toString()>> id: " + this.id + ", nombre: " + this.nombre +
+        return  "Product.toString()>> id: " + this.id +
+                ", nombre: " + this.nombre +
                 ", categoria: " + this.categoria +
                 ", precio: " + this.precio +
                 ", cantidad: " + this.cantidad +
@@ -57,20 +61,20 @@ public class Productos implements Serializable {
 
     public static void initProducts() {
         db.recreateOneTable(DatabaseManager.PRODUCT);
-        new Productos( "1", "Introduction to Algorithms, Hardcover – Jul 31 2009", 28.67, 0, "Libros",
-                "https://images-na.ssl-images-amazon.com/images/I/51fgDX37U7L._SX442_BO1,204,203,200_.jpg")
+        new Productos( "1", "Huevo Rojo A X 30 SMN", 18.670, 30, "Mercado",
+                "https://exitocol.vtexassets.com/arquivos/ids/13315417-800-auto?v=637911315952000000&width=800&height=auto&aspect=true")
                 .addToDatabase();
-        new Productos( "2", "Samsung Galaxy S9 64GB", 719.99, 0, "Celulares",
-                "https://target.scene7.com/is/image/Target/53438666")
+        new Productos( "2", "Gaseosa duo gratis gaseosa 1.5", 13.300, 15, "Bebidas",
+                "https://exitocol.vtexassets.com/arquivos/ids/9222577-800-auto?v=637637340986970000&width=800&height=auto&aspect=true")
                 .addToDatabase();
-        new Productos( "3", "Logitech Wireless Keyboard (K360) - Black", 29.99, 0, "Accesorios de Computador",
-                "https://multimedia.bbycastatic.ca/multimedia/products/500x500/102/10201/10201435.jpg")
+        new Productos( "3", "Pasta Clásica Spaghetti X 1000 gr", 5.040, 35, "Mercado",
+                "https://exitocol.vtexassets.com/arquivos/ids/1976731-800-auto?v=637259153309900000&width=800&height=auto&aspect=true")
                 .addToDatabase();
-        new Productos( "4", "Logitech M720 Triathlon Wireless Optical Mouse - Black", 49.99, 0, "Accesorios de Computador",
-                "https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/104/10482/10482681.jpg")
+        new Productos( "4", "Aceite Vegetal FRESCAMPO 3000 ml", 30.900, 12, "Mercado",
+                "https://exitocol.vtexassets.com/arquivos/ids/13929565-800-auto?v=637944648796900000&width=800&height=auto&aspect=true")
                 .addToDatabase();
-        new Productos("5", "Google Home Mini - Charcoal", 79.99, 0, "Hogar",
-                "https://multimedia.bbycastatic.ca/multimedia/products/500x500/116/11615/11615336.jpg")
+        new Productos("5", "SIXPACK BEBIDA DE MALTA MINI PONY MALTA 1200 ml", 5.990, 8, "Bebidas",
+                "https://exitocol.vtexassets.com/arquivos/ids/13173851-800-auto?v=637899411098230000&width=800&height=auto&aspect=true")
                 .addToDatabase();
     }
 
@@ -112,8 +116,8 @@ public class Productos implements Serializable {
         return cantidad;
     }
 
-    public void setQuantity(Integer cantidad) {
-        this.cantidad = cantidad;
+    public void setQuantity(Integer candid) {
+        this.cantidad = candid;
         this.updateDatabase();
     }
 
@@ -130,16 +134,7 @@ public class Productos implements Serializable {
                     l.get(Productos.size * i + 4).toString(),
                     l.get(Productos.size * i + 5).toString()
             ));
-            /*
-            for (int j = 0; j < Product.size ; j++) {
-                //Log.d("timbo.j " + j, l.get(j).toString());
-                Log.d("timbo result", l.get(Product.size * i + j).toString());
-            }
-            Log.d("timbo.fetchProducts " + i, productList.get(i).toString());
-            //productArrayList.add((Product) productList.get(i));
-            */
         }
         return productArrayList;
-        //return new ArrayList<Product>();
     }
 }
