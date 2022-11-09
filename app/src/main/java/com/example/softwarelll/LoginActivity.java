@@ -21,10 +21,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        final Button loginBtn = findViewById(R.id.loginBtn);
+        final Button loginBtn = findViewById(R.id.confirmBtn);
 
         final EditText usernameET = findViewById(R.id.usernameLoginScreen);
-        final EditText passwordET = findViewById(R.id.passwordLoginScreen);
+        final EditText passwordET = findViewById(R.id.direccionedit);
 
         Usuarios.setDb(getApplicationContext());
         Ordenar.setDb(getBaseContext());

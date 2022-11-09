@@ -43,6 +43,7 @@ public class AdaptadorProductos extends ArrayAdapter<Productos> {
                 productDetails.putExtra("productPosition", posicion);
                 productDetails.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 getContext().startActivity(productDetails);
+
             }
         });
 

@@ -1,5 +1,6 @@
 package com.example.softwarelll.Productos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.softwarelll.Confirmacion;
 import com.example.softwarelll.Ordenar.Ordenar;
 import com.example.softwarelll.R;
 
@@ -28,13 +30,16 @@ public class ListaProductos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //vuelve a la Actividad o Fragmento anterior al que te encuentras en el momento
-                if (realizarPedido()) onBackPressed();
+
+                Intent confirmarPedido = new Intent(getBaseContext(), Confirmacion.class);
+                startActivity(confirmarPedido);
+                realizarPedido();
             }
         });
 
     }
 
-    public boolean realizarPedido() {
+    public void realizarPedido() {
         ProductosFragmento listaFragmentosProductos = (ProductosFragmento) getFragmentManager().findFragmentById(R.id.fragment);
         ListAdapter listaProductos =  listaFragmentosProductos.getListAdapter();
         Log.d("timbo.fl", listaFragmentosProductos.toString());
@@ -58,10 +63,10 @@ public class ListaProductos extends AppCompatActivity {
             }
         }
 
-        if (ordenes.size() > 0) return true;
+        if (ordenes.size() > 0) {
+        }
         else {
             Toast.makeText(getBaseContext(), "No hay Productos en el Carrito!", Toast.LENGTH_SHORT).show();
-            return false;
         }
     }
 

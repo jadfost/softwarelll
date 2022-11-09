@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 
 import com.example.softwarelll.DB.DatabaseManager;
 import com.example.softwarelll.Usuarios;
-import com.example.softwarelll.Estado;
 import com.example.softwarelll.Productos.Productos;
 
 import java.util.ArrayList;
@@ -22,7 +21,7 @@ public class Ordenar {
     public String id;
     public String clienteId;
     public String fechaorden;
-    public Estado estado;
+    public String estado;
     public String productoId;
     public Double precio;
     public Integer cantidad;
@@ -39,7 +38,7 @@ public class Ordenar {
         this.clienteId = clienteId;
         this.productoId = productoId;
         this.fechaorden = fechaorden;
-        this.estado = Estado.fromString(estado);
+        this.estado = estado;
 
         this.precio = precio;
         this.cantidad = cantidad;
@@ -54,7 +53,7 @@ public class Ordenar {
         this.productoId = product.id;
         Date now = Calendar.getInstance().getTime();
         this.fechaorden = now.toString();
-        this.estado = Estado.Procesando;
+        this.estado = estado;
         this.precio = product.precio;
         this.cantidad = product.cantidad;
 
@@ -82,7 +81,7 @@ public class Ordenar {
 
     private String[] getRecord() {
         return new String[] { this.id, this.clienteId, this.productoId, this.fechaorden,
-                this.estado.toString(), this.precio.toString(), this.cantidad.toString()
+                this.precio.toString(), this.cantidad.toString()
         };
     }
 
@@ -100,7 +99,7 @@ public class Ordenar {
     }
 
     public void deliver() {
-        this.estado = Estado.Entregado;
+        this.estado = estado;
         updateDatabase();
     }
 
