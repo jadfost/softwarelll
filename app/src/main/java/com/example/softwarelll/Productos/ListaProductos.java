@@ -28,7 +28,6 @@ public class ListaProductos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //vuelve a la Actividad o Fragmento anterior al que te encuentras en el momento
-                // todo depende de como lo hayas programado
                 if (realizarPedido()) onBackPressed();
             }
         });

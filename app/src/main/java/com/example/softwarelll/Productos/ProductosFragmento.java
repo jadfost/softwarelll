@@ -12,7 +12,6 @@ import androidx.annotation.Nullable;
 import com.example.softwarelll.R;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class ProductosFragmento extends ListFragment {
 
@@ -55,6 +54,6 @@ public class ProductosFragmento extends ListFragment {
         this.adapter.addAll(dbProducts);
         this.adapter.notifyDataSetChanged();
         TextView total = getActivity().findViewById(R.id.totalAccumulator);
-        total.setText(String.format(Locale.CANADA, "$%.2f", adapter.total));
+        total.setText(String.valueOf(adapter.total));
     }
 }

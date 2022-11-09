@@ -16,8 +16,6 @@ import androidx.annotation.NonNull;
 import com.example.softwarelll.DescargarImagen;
 import com.example.softwarelll.R;
 
-import java.util.Locale;
-
 public class AdaptadorProductos extends ArrayAdapter<Productos> {
 
     public double total = 0;
@@ -59,7 +57,7 @@ public class AdaptadorProductos extends ArrayAdapter<Productos> {
 
         tvNombre.setText(producto.nombre);
         tvCantidad.setText(String.valueOf(producto.cantidad));
-        tvPrecio.setText(String.format(Locale.ENGLISH,"$%.2f", producto.precio * producto.cantidad));
+        tvPrecio.setText(String.valueOf(producto.precio * producto.cantidad));
 
         ProgressBar spinningWheel = convertirVista.findViewById(R.id.productProgressBar);
         new DescargarImagen(getContext()).download(ivMiniatura, spinningWheel, producto.imageUrl);

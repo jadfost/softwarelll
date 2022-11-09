@@ -15,11 +15,10 @@
     <string name="customerLoginBtn">Regístrate como Cliente</string>
     <string name="cancelBtn">Cancelar</string>
     <string name="productId">Product ID:</string>
-    <string name="employeeId">Empleado ID:</string>
     <string name="placeOrderBtn">Realizar pedido</string>
     <string name="signUpBtn">Registrar</string>
     <string name="loginBtn">Login</string>
-    <string name="listProductsHeader">Carrito actual:</string>
+    <string name="listProductsHeader">Lista de Productos:</string>
     <string name="total">Total:</string>
     <string name="addToCart">Añadir a la cesta</string>
     <string name="price">Precio:</string>
