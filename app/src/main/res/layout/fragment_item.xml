@@ -5,10 +5,6 @@
     android:layout_height="match_parent"
     >
 
-    <ProgressBar
-        android:id="@+id/productProgressBar"
-        android:layout_width="110dp"
-        android:layout_height="110dp" />
     <ImageView
         android:id="@+id/productThumbnail"
         style="@style/thumbnail"
