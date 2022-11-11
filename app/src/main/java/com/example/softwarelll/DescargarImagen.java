@@ -16,7 +16,7 @@ import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
 public class DescargarImagen implements ImageLoadingListener {
     Context context;
-    private ImageLoader imageLoader;
+    private final ImageLoader imageLoader;
     private ProgressBar spinningWheel;
 
     public DescargarImagen(Context context) {
@@ -25,10 +25,10 @@ public class DescargarImagen implements ImageLoadingListener {
         this.imageLoader.init(ImageLoaderConfiguration.createDefault(context));
     }
 
-    private void download(ImageView view, String imageUrl) {
+    public void download(ImageView view, String imageUrl) {
         DisplayImageOptions options = new DisplayImageOptions.Builder()//
-                .showImageOnFail(R.drawable.shopping_basket_greyed_out)
-                .showImageForEmptyUri(R.drawable.shopping_basket_greyed_out)
+                .showImageOnFail(R.drawable.shopping_basket_green)
+                .showImageForEmptyUri(R.drawable.shopping_basket_green)
                 .cacheInMemory(true)
                 .cacheOnDisk(false)
                 .build();
