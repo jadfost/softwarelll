@@ -1,11 +1,9 @@
-package com.example.softwarelll;
+package com.example.softwarelll.DB;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.util.Log;
-
-import com.example.softwarelll.DB.DatabaseManager;
 
 import java.util.List;
 

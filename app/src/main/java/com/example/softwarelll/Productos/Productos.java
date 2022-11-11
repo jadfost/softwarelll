@@ -14,7 +14,7 @@ import java.util.List;
 public class Productos implements Serializable {
     public String id;
     public String nombre;
-    public Double precio;
+    public Integer precio;
     public Integer cantidad;
     public String categoria;
     public String imageUrl;
@@ -25,7 +25,7 @@ public class Productos implements Serializable {
     };
     public static final int size = tbl_product_fields.length;
 
-    public Productos(String id, String nombre, Double precio, Integer cantidad, String categoria, String imageUrl) {
+    public Productos(String id, String nombre, Integer precio, Integer cantidad, String categoria, String imageUrl) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
@@ -37,7 +37,7 @@ public class Productos implements Serializable {
     public Productos(List record) {
         this(record.get(0).toString(),
                 record.get(1).toString(),
-                Double.valueOf(record.get(2).toString()),
+                Integer.valueOf(record.get(2).toString()),
                 Integer.valueOf(record.get(3).toString()),
                 record.get(4).toString(),
                 record.get(5).toString());
@@ -61,19 +61,19 @@ public class Productos implements Serializable {
 
     public static void initProducts() {
         db.recreateOneTable(DatabaseManager.PRODUCT);
-        new Productos( "1", "Huevo Rojo A X 30 SMN", 18670.0, 30, "Mercado",
-                "https://exitocol.vtexassets.com/arquivos/ids/13315417-800-auto?v=637911315952000000&width=800&height=auto&aspect=true")
+        new Productos( "1", "Huevo Rojo A X 30 SMN", 18670, 30, "Mercado",
+                "https://exitocol.vtexassets.com/arquivos/ids/13316251-800-auto?v=637911329722700000&width=800&height=auto&aspect=true")
                 .addToDatabase();
-        new Productos( "2", "Gaseosa duo gratis gaseosa 1.5", 13300.0, 15, "Bebidas",
+        new Productos( "2", "Gaseosa duo gratis gaseosa 1.5", 13300, 15, "Bebidas",
                 "https://exitocol.vtexassets.com/arquivos/ids/9222577-800-auto?v=637637340986970000&width=800&height=auto&aspect=true")
                 .addToDatabase();
-        new Productos( "3", "Pasta Clásica Spaghetti X 1000 gr", 5040.0, 35, "Mercado",
+        new Productos( "3", "Pasta Clásica Spaghetti X 1000 gr", 5040, 35, "Mercado",
                 "https://exitocol.vtexassets.com/arquivos/ids/1976731-800-auto?v=637259153309900000&width=800&height=auto&aspect=true")
                 .addToDatabase();
-        new Productos( "4", "Aceite Vegetal FRESCAMPO 3000 ml", 30900.0, 12, "Mercado",
+        new Productos( "4", "Aceite Vegetal FRESCAMPO 3000 ml", 30900, 12, "Mercado",
                 "https://exitocol.vtexassets.com/arquivos/ids/13929565-800-auto?v=637944648796900000&width=800&height=auto&aspect=true")
                 .addToDatabase();
-        new Productos("5", "SIXPACK BEBIDA DE MALTA MINI PONY MALTA 1200 ml", 5990.0, 8, "Bebidas",
+        new Productos("5", "SIXPACK BEBIDA DE MALTA MINI PONY MALTA 1200 ml", 5990, 8, "Bebidas",
                 "https://exitocol.vtexassets.com/arquivos/ids/13173851-800-auto?v=637899411098230000&width=800&height=auto&aspect=true")
                 .addToDatabase();
     }
@@ -113,6 +113,7 @@ public class Productos implements Serializable {
     }
 
     public Integer getQuantity() {
+
         return cantidad;
     }
 
@@ -129,7 +130,7 @@ public class Productos implements Serializable {
             productArrayList.add(new Productos(
                     l.get(Productos.size * i).toString(),
                     l.get(Productos.size * i + 1).toString(),
-                    Double.valueOf(l.get(Productos.size * i + 2).toString()),
+                    Integer.valueOf(l.get(Productos.size * i + 2).toString()),
                     Integer.valueOf(l.get(Productos.size * i + 3).toString()),
                     l.get(Productos.size * i + 4).toString(),
                     l.get(Productos.size * i + 5).toString()

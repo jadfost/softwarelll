@@ -1,4 +1,4 @@
-package com.example.softwarelll.Ordenar;
+package com.example.softwarelll.DB;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -7,8 +7,6 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.example.softwarelll.DB.DatabaseManager;
-import com.example.softwarelll.Usuarios;
 import com.example.softwarelll.Productos.Productos;
 
 import java.util.ArrayList;
@@ -23,7 +21,7 @@ public class Ordenar {
     public String fechaorden;
     public String estado;
     public String productoId;
-    public Double precio;
+    public Integer precio;
     public Integer cantidad;
 
     private static DatabaseManager db;
@@ -33,7 +31,7 @@ public class Ordenar {
     };
     private static final int size = tbl_order_fields.length;
 
-    public Ordenar(String s, String id, String clienteId, String productoId, String fechaorden, String estado, Double precio, Integer cantidad){
+    public Ordenar(String s, String id, String clienteId, String productoId, String fechaorden, String estado, Integer precio, Integer cantidad){
         this.id = id;
         this.clienteId = clienteId;
         this.productoId = productoId;
@@ -139,7 +137,7 @@ public class Ordenar {
                     l.get(Ordenar.size * i + 3).toString(),
                     l.get(Ordenar.size * i + 4).toString(),
                     l.get(Ordenar.size * i + 5).toString(),
-                    Double.valueOf(l.get(Ordenar.size * i + 6).toString()),
+                    Integer.valueOf(l.get(Ordenar.size * i + 6).toString()),
                     Integer.valueOf(l.get(Ordenar.size * i + 7).toString())
             ));
         }
