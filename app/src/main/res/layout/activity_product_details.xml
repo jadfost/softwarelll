@@ -28,7 +28,8 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_below="@id/productDetailsName"
-        />
+        android:visibility="invisible"
+        tools:visibility="invisible" />
 
     <ImageView
         android:id="@+id/productDetailsImage"
@@ -136,5 +137,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:backgroundTint="@color/primaryDark"
         />
 </RelativeLayout>

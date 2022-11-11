@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +27,7 @@ public class ActividadDetallesProducto extends AppCompatActivity {
         
         final Productos producto = (Productos) DetallesProductos.getSerializableExtra("producto");
 
-        Button addToCartBtn = findViewById(R.id.addToCartBtn);
+        Button agregarCarro = findViewById(R.id.addToCartBtn);
 
         TextView nombre = findViewById(R.id.productDetailsName);
         TextView precio = findViewById(R.id.productDetailsPrice);
@@ -37,21 +36,22 @@ public class ActividadDetallesProducto extends AppCompatActivity {
 
         ImageView imagen = findViewById(R.id.productDetailsImage);
 
-        final EditText newQuantity = findViewById(R.id.productDetailsNewQuantity);
+        final EditText nuevaCantidad = findViewById(R.id.productDetailsNewQuantity);
 
         nombre.setText(producto.nombre);
         categoria.setText(producto.categoria);
         precio.setText(producto.precio.toString());
         cantidad.setText(producto.cantidad.toString());
 
-        ProgressBar spinningWheel = findViewById(R.id.productDetailsProgressBar);
-        new DescargarImagen(getApplicationContext()).download(imagen, spinningWheel, producto.imageUrl);
+        //Glide.with(ActividadDetallesProducto.this).load(producto.imageUrl).into(imagen);
+        //ProgressBar spinningWheel = findViewById(R.id.productDetailsProgressBar);
+        new DescargarImagen(getApplicationContext()).download(imagen, producto.imageUrl);
 
-        addToCartBtn.setOnClickListener(new View.OnClickListener() {
+        agregarCarro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    producto.setQuantity( Integer.valueOf(newQuantity.getText().toString()) );
+                    producto.setQuantity( Integer.valueOf(nuevaCantidad.getText().toString()) );
                     onBackPressed();
                 } catch (NumberFormatException numberFormatException) {
                     Toast.makeText(getApplicationContext(), "Cantidad Invalida!", Toast.LENGTH_SHORT).show();
