@@ -22,13 +22,13 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     private static final String[] tableCreatorString =
             {"CREATE TABLE " + DatabaseManager.tables[CLIENTE] + " (clienteId INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, contrasena TEXT);",
-                    "CREATE TABLE " + DatabaseManager.tables[PRODUCT] + " (productoId INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, precio TEXT," +
+                    "CREATE TABLE " + DatabaseManager.tables[PRODUCT] + " (productoId INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, precio INTEGER," +
                             " cantidad INTEGER, categoria TEXT, imageUrl TEXT);",
                     "CREATE TABLE " + DatabaseManager.tables[ORDER] + " (orderId INTEGER PRIMARY KEY AUTOINCREMENT, " +
                             "clienteId INTEGER KEY REFERENCES tbl_customer(clienteId), " +
                             "productoId INTEGER KEY REFERENCES tbl_product(productoId), " +
                             "fechaorden DATE, estado TEXT," +
-                            "precio FLOAT, cantidad INTEGER );"
+                            "precio INTEGER, cantidad INTEGER );"
                     ,};
 
     // constructor de clases

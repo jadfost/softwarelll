@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.softwarelll.Confirmacion;
-import com.example.softwarelll.Ordenar.Ordenar;
+import com.example.softwarelll.DB.Ordenar;
 import com.example.softwarelll.R;
 
 import java.util.ArrayList;

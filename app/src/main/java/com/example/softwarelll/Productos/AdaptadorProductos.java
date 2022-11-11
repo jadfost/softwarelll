@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,7 +17,7 @@ import com.example.softwarelll.R;
 
 public class AdaptadorProductos extends ArrayAdapter<Productos> {
 
-    public double total = 0;
+    public Integer total = 0;
 
     public AdaptadorProductos(@NonNull Context context) {
         super(context, 0);
@@ -60,8 +59,9 @@ public class AdaptadorProductos extends ArrayAdapter<Productos> {
         tvCantidad.setText(String.valueOf(producto.cantidad));
         tvPrecio.setText(String.valueOf(producto.precio * producto.cantidad));
 
-        ProgressBar spinningWheel = convertirVista.findViewById(R.id.productProgressBar);
-        new DescargarImagen(getContext()).download(ivMiniatura, spinningWheel, producto.imageUrl);
+        //Glide.with(convertirVista).load(producto.imageUrl).into(ivMiniatura);
+        //ProgressBar spinningWheel = convertirVista.findViewById(R.id.productProgressBar);
+        new DescargarImagen(getContext()).download(ivMiniatura, producto.imageUrl);
 
         // Devolver la vista completa para renderizar en pantalla
         return convertirVista;
