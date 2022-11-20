@@ -26,7 +26,6 @@ public class ActividadDetallesProducto extends AppCompatActivity {
         Intent DetallesProductos = getIntent();
         
         final Productos producto = (Productos) DetallesProductos.getSerializableExtra("producto");
-
         Button agregarCarro = findViewById(R.id.addToCartBtn);
 
         TextView nombre = findViewById(R.id.productDetailsName);

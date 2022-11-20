@@ -7,14 +7,22 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.softwarelll.LoginActivity">
+        tools:context="com.example.softwarelll.LoginActivity"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <ImageView
             android:id="@+id/basketImage"
-            android:layout_width="wrap_content"
-            android:layout_height="250dp"
+            android:layout_width="181dp"
+            android:layout_height="155dp"
             android:layout_above="@id/centerLoginScreen"
-            android:layout_marginBottom="9dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="119dp"
+            android:layout_marginTop="59dp"
+            android:layout_marginEnd="110dp"
+            android:layout_marginBottom="152dp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/shopping_basket_green" />
 
@@ -37,8 +45,9 @@
         <TableLayout
             android:id="@+id/loginTable"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="427dp"
             android:layout_below="@id/appTitle"
+            android:layout_marginTop="-202dp"
             android:gravity="center">
 
             <TableRow
@@ -47,6 +56,7 @@
                 android:gravity="center_horizontal">
 
                 <TextView
+                    android:id="@+id/txtdireccion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Direccion:"
@@ -54,7 +64,7 @@
                     android:textSize="23sp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName"
+                    android:id="@+id/direccionedit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="Digitar"
@@ -71,7 +81,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="M.Pago: "
+                    android:text="Metodo:"
                     android:textColor="#000000"
                     android:textSize="23sp" />
 
@@ -88,13 +98,13 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:gravity="center_horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Valor: "
+                    android:text="Valor envio:"
                     android:textColor="#000000"
                     android:textSize="23sp" />
 
@@ -102,13 +112,16 @@
                     android:id="@+id/txttotal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
+                    android:text="$ 5.200"
                     android:textColor="#09510C"
                     android:textSize="23sp" />
 
             </TableRow>
 
             <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="134dp"
+                android:layout_marginTop="40dp"
                 android:gravity="center_horizontal"
                 android:paddingTop="@dimen/btnPaddingTopFromText">
 

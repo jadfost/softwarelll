@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.example.softwarelll.Confirmacion;
 import com.example.softwarelll.DescargarImagen;
 import com.example.softwarelll.R;
 
@@ -75,5 +76,11 @@ public class AdaptadorProductos extends ArrayAdapter<Productos> {
             Productos producto = getItem(i);
             total += producto.cantidad * producto.precio;
         }
+    }
+
+    public void taoling(){
+        Intent intents = new Intent(getContext(), Confirmacion.class);
+        intents.putExtra(Intent.EXTRA_TEXT, total);
+        getContext().startActivity(intents);
     }
 }
