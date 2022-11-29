@@ -4,8 +4,10 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,9 +26,12 @@ public class Confirmacion extends AppCompatActivity {
         final Button cancelarBtn = findViewById(R.id.backBtn);
         final EditText direccion = findViewById(R.id.direccionedit);
 
-        cancelarBtn.setOnClickListener(view -> {
-            Intent lproduct = new Intent(getBaseContext(), ListaProductos.class);
-            startActivity(lproduct);
+        cancelarBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loginti();
+                Toast.makeText(Confirmacion.this, "Compra Cancelada!", Toast.LENGTH_SHORT).show();
+            }
         });
 
         confimarBtn.setOnClickListener(view -> {
@@ -37,17 +42,24 @@ public class Confirmacion extends AppCompatActivity {
                     .setPositiveButton(" Si", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            loginti();
+                            Toast.makeText(Confirmacion.this, "Compra Realizada! Pronto Llegara tu pedido!", Toast.LENGTH_SHORT).show();
                         }
                     })
                     .setNegativeButton("No", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            // agrega aqui la funcion que quieres hacer con el boton negativo
+                            Toast.makeText(Confirmacion.this, "Oppss!", Toast.LENGTH_SHORT).show();
                         }
                     });
             AlertDialog mensaje = alertdialog.create();
             mensaje.show();
         });
 
+    }
+
+    public void loginti(){
+        Intent intent = new Intent(getBaseContext(), LoginActivity.class);
+        startActivity(intent);
     }
 }
